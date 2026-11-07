@@ -20,7 +20,7 @@ export default function Inicio() {
             Cabañas sobre el río, como todos los veranos
           </h1>
           <p className="mt-3 text-base leading-relaxed text-agua-100">
-            Elegí tu cabaña y tus fechas, y te esperamos con el río a pasos.
+            Elegí tu cabaña y tus fechas.
           </p>
           <Link to="/reservar" className="btn-principal mt-6">
             Ver fechas y reservar
