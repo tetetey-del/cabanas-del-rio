@@ -20,7 +20,7 @@ export default function Inicio() {
             Cabañas sobre el río, como todos los veranos
           </h1>
           <p className="mt-3 text-base leading-relaxed text-agua-100">
-            Elegí tu cabaña y tus fechas. En enero y febrero alquilamos por semana, de sábado a sábado.
+            Elegí tu cabaña y tus fechas, y te esperamos con el río a pasos.
           </p>
           <Link to="/reservar" className="btn-principal mt-6">
             Ver fechas y reservar
@@ -31,6 +31,7 @@ export default function Inicio() {
       <main className="space-y-8 px-5 py-8">
         <section>
           <h2 className="text-xl font-semibold">Nuestras cabañas</h2>
+          <p className="mt-1 text-sm text-piedra-400">En enero y febrero alquilamos por semana <span className="whitespace-nowrap">(de sábado a sábado).</span></p>
           <div className="mt-3 space-y-3">
             {cats.map((c) => (
               <Link key={c} to={`/reservar?categoria=${c}`} className="tarjeta block p-4 active:bg-agua-50">
