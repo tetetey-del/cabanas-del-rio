@@ -1,0 +1,44 @@
+@import "@fontsource/lora/500.css";
+@import "@fontsource/lora/600.css";
+@import "@fontsource/nunito-sans/400.css";
+@import "@fontsource/nunito-sans/600.css";
+@import "@fontsource/nunito-sans/700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-piedra-50 font-sans text-tinta antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-titulo text-agua-800;
+  }
+}
+
+@layer components {
+  .btn-principal {
+    @apply inline-flex min-h-[48px] w-full items-center justify-center rounded-xl bg-arena-400 px-5 text-base font-bold text-tinta shadow-sm transition active:bg-arena-500 disabled:cursor-not-allowed disabled:bg-piedra-200 disabled:text-piedra-400 disabled:shadow-none;
+  }
+  .btn-secundario {
+    @apply inline-flex min-h-[44px] items-center justify-center rounded-xl border border-agua-500 bg-white px-4 text-sm font-bold text-agua-800 transition active:bg-agua-50;
+  }
+  .btn-suave {
+    @apply inline-flex min-h-[40px] items-center justify-center rounded-lg px-3 text-sm font-semibold text-agua-500 transition active:bg-agua-50;
+  }
+  .tarjeta {
+    @apply rounded-2xl border border-piedra-200 bg-white;
+  }
+  .campo {
+    @apply block w-full rounded-xl border border-piedra-200 bg-white px-4 py-3 text-base text-tinta outline-none transition placeholder:text-piedra-400 focus:border-agua-500 focus:ring-2 focus:ring-agua-100;
+  }
+  .etiqueta {
+    @apply mb-1.5 block text-sm font-semibold text-agua-800;
+  }
+}
