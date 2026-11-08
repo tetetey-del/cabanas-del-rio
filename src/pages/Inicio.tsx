@@ -13,8 +13,8 @@ export default function Inicio() {
           <path d="M0 70c40-20 80 20 120 0s80 20 120 0 80 20 160-5v55H0z" fill="#3F7F78" />
           <path d="M0 95c50-15 90 15 140 0s90 15 140 0 70 10 120-5v30H0z" fill="#DCEBE7" opacity=".5" />
         </svg>
-        <div className="relative">
-          <svg viewBox="0 0 32 32" className="h-11 w-11" aria-hidden>
+        <div className="relative text-center">
+          <svg viewBox="0 0 32 32" className="mx-auto h-11 w-11" aria-hidden>
             <rect width="32" height="32" rx="8" fill="#F5F3EE" />
             <path d="M8 15l8-6 8 6v9H8z" fill="#1F4E4A" />
             <path d="M6 25c3-2 5 2 8 0s5 2 8 0 4 1 4 1" stroke="#D9B77E" strokeWidth="2" fill="none" strokeLinecap="round" />
