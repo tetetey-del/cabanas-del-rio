@@ -43,6 +43,8 @@ Es una clave de demostración: al no haber backend no protege datos reales.
 | Base de datos | `localStorage`, clave `cabanas-del-rio:datos:v1`. Cada navegador ve sus propios datos. |
 | Pagos | No hay cobros. La reserva muestra el total y queda confirmada. |
 | WhatsApp | «Avisar por WhatsApp» arma el texto (semana, categoría y total), abre `wa.me` con el mensaje cargado y pasa a la familia a «Avisada». **La app no envía nada sola:** lo manda una persona. El mensaje también se puede copiar. |
+| Compartir reserva | En la confirmación, «Compartir por WhatsApp» abre WhatsApp (`wa.me`) con los datos de la reserva ya escritos; la familia elige a quién mandarlo. |
+| Calendario | «Agregar al calendario (.ics)» genera el archivo en el navegador (sin servicios externos) con llegada a las 13:00 y salida a las 10:00, hora de Córdoba (UTC-3). |
 | Usuarios | No hay cuentas. El panel usa una sola clave. |
 
 Toda la lógica de negocio está en funciones puras (`src/lib/reglas.ts`) y el guardado en
@@ -105,6 +107,7 @@ src/
   lib/reglas.ts       Reglas (temporadas, semanas, cupo, lista de espera, texto de aviso)
   lib/reglas.test.ts  Pruebas de las reglas
   lib/fechas.ts       Fechas en formato AAAA-MM-DD y textos en español
+  lib/compartir.ts    Texto para compartir la reserva por WhatsApp y archivo .ics
   data/ejemplo.ts     Datos de ejemplo
   store.tsx           Estado + localStorage
   pages/              Pantallas públicas (inicio, reservar, datos, confirmación, lista de espera)
