@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { CABANAS, CATEGORIAS, COMUN_A_TODAS, NEGOCIO } from "../config";
 import { Aviso, Fila, Pagina } from "../components/ui";
+import { descargarICS, enlaceCompartirWhatsApp } from "../lib/compartir";
 import { fechaCorta, pesos, rangoCorto } from "../lib/fechas";
 import { useStore } from "../store";
 
@@ -54,6 +55,29 @@ export default function ReservaConfirmada() {
           <Fila etiqueta="Personas">{r.personas}</Fila>
           <Fila etiqueta="Total">{pesos(r.total)}</Fila>
         </div>
+
+        {!cancelada ? (
+          <section aria-label="Guardar y compartir la reserva" className="space-y-2.5">
+            <a
+              href={enlaceCompartirWhatsApp(r)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secundario w-full gap-2"
+            >
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden>
+                <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5 1.5.6 2.1.7 2.8.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.2Z" />
+              </svg>
+              Compartir por WhatsApp
+            </a>
+            <button type="button" className="btn-secundario w-full gap-2" onClick={() => descargarICS(r)}>
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+                <rect x="3" y="5" width="18" height="16" rx="2" />
+                <path d="M3 10h18M8 3v4M16 3v4" />
+              </svg>
+              Agregar al calendario (.ics)
+            </button>
+          </section>
+        ) : null}
 
         <p className="text-sm">
           {CATEGORIAS[r.categoria].descripcion} {COMUN_A_TODAS} Te escribimos al {r.celular} para coordinar la llegada.
